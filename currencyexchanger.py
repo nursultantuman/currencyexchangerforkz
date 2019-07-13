@@ -48,7 +48,8 @@ def fin_parser(base_url, headers):
                 print(f"Ваша сумма в EUR:\n>{eur_summ}")
             elif vvod2.lower == "rub":
                 your_balance = float(input("Введите сумму в тенге: "))
-                print(your_balance  / float(rub_sell))
+                rub_summ = your_balance / float(rub_sell)
+                print(f"Ваша сумма в RUB:\n>{rub_summ}")
             else:
                 print("Вы ввели что-то неправильное")
                 print("Доступно только\n> usd, eur, rub")
@@ -56,18 +57,21 @@ def fin_parser(base_url, headers):
         elif vvod.lower() == "tokz":
             print("")
             print("Выберите какую валюту вы хотите перевести в тенге: ")
-            print("usd, eur, rub")
+            print("USD, EUR, RUB")
             vvod2 = input("Введите один из допустимых валют\n>")
             print("")
             if vvod2.lower() == "usd":
                 your_balance = float(input("Введите вашу сумму в USD: "))
-                print(your_balance * float(usd_buy))
+                usd_summ = your_balance * float(usd_buy)
+                print(f"Ваша сумма в KZT: {usd_summ}")
             elif vvod2.lower() == "eur":
                 your_balance = float(input("Введите вашу сумму в EUR: "))
-                print(your_balance * float(eur_buy))
+                eur_summ = your_balance * float(eur_buy)
+                print(f"Ваша сумма в KZT: {eur_summ}")
             elif vvod2.lower() == "rub":
                 your_balance = float(input("Введите вашу сумму в RUB: "))
-                print(your_balance * float(rub_buy))
+                rub_summ = your_balance * float(rub_buy)
+                print(f"Ваша сумма в KZT: {rub_summ}")
             else:
                 print("Вы ввели что-то неправильное")
                 print("Доступно только\n>usd, eur, rub")
