@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
+import tkinter as Tk
+
 
 headers = {'accept': '*/*',
            'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}
@@ -16,6 +18,7 @@ def fin_parser(base_url, headers):
         for currency in divs:
             currency = currency.text.strip()
             a.append(currency)
+
         # Переменные епта
         usd_buy = a[0]
         usd_sell = a[1]
@@ -46,7 +49,7 @@ def fin_parser(base_url, headers):
                 your_balance = float(input("Введите сумму в тенге: "))
                 eur_summ = your_balance / float(eur_sell)
                 print(f"Ваша сумма в EUR:\n>{eur_summ}")
-            elif vvod2.lower == "rub":
+            elif vvod2.lower() == "rub":
                 your_balance = float(input("Введите сумму в тенге: "))
                 rub_summ = your_balance / float(rub_sell)
                 print(f"Ваша сумма в RUB:\n>{rub_summ}")
